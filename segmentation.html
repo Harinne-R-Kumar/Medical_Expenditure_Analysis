@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Segmentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3e8ff;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, #b38bfa, #5e2f8e);
+            padding-top: 30px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: 0.3s ease-in-out;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            transition: 0.3s ease;
+            border-radius: 5px;
+            margin: 5px 10px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            padding-left: 25px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .content-box {
+            background: white;
+            padding: 30px;
+            width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #5e2f8e;
+            font-size: 26px;
+        }
+
+        h2 {
+            color: #b38bfa;
+            margin-top: 20px;
+        }
+
+        /* Segmentation Pie Chart */
+        img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            background: #b38bfa;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>🏥 Medical Analysis</h2>
+        <a href="/">🏠 Home</a>
+        <a href="/analysis">📊 View Analysis</a>
+        <a href="/predict">💰 Predict Costs</a>
+        <a href="/anomaly_detection">🚨 Detect Anomalies</a>
+        <a href="/segmentation">🧑‍⚕️ Segment Patients</a>
+        <a href="/fraud_detection">⚠️ Fraud Detection</a>
+        <a href="/export_fraud_data">📥 Export Data</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-box">
+            <h1>Patient Segmentation</h1>
+
+            <!-- Display Segmentation Pie Chart -->
+            <h2>Segmentation by Age, Race, & State</h2>
+            <img src="{{ segmentation_plot }}" alt="Patient Segmentation Pie Chart">
+        </div>
+
+        <div class="footer">
+            © 2025 Medical Analytics | Powered by AI & Data Science
+        </div>
+    </div>
+
+</body>
+</html>

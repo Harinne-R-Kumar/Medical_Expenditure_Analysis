@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Comparison</title>
+</head>
+<body>
+    <h2>Compare Model Predictions</h2>
+    <form id="predictForm">
+        <input type="number" name="Provider ID" placeholder="Provider ID">
+        <input type="number" name="Department ID" placeholder="Department ID">
+        <input type="number" name="Diagnosis ID" placeholder="Diagnosis ID">
+        <input type="number" name="Procedure ID" placeholder="Procedure ID">
+        <input type="number" name="Insurance ID" placeholder="Insurance ID">
+        <input type="number" name="Medication Cost" placeholder="Medication Cost">
+        <input type="number" name="Room Charges" placeholder="Room Charges">
+        <button type="submit">Predict</button>
+    </form>
+    <div id="predictionResults"></div>
+    <script>
+        document.getElementById("predictForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ "Provider ID": 2, "Department ID": 1, "Diagnosis ID": 4, "Procedure ID": 2, "Insurance ID": 1, "Medication Cost": 50, "Room Charges": 300 })
+            })
+            .then(response => response.json())
+            .then(data => document.getElementById("predictionResults").innerText = JSON.stringify(data, null, 2));
+        });
+    </script>
+</body>
+</html>

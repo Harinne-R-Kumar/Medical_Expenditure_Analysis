@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Data for Power BI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3e8ff;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, #b38bfa, #5e2f8e);
+            padding-top: 30px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: 0.3s ease-in-out;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            transition: 0.3s ease;
+            border-radius: 5px;
+            margin: 5px 10px;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            padding-left: 25px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .content-box {
+            background: white;
+            padding: 30px;
+            width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #5e2f8e;
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Download Buttons */
+        .download-buttons {
+            margin-top: 20px;
+        }
+
+        .download-buttons button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: #b38bfa;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .download-buttons button:hover {
+            background: #5e2f8e;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            background: #b38bfa;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>🏥 Medical Analysis</h2>
+        <a href="/">🏠 Home</a>
+        <a href="/analysis">📊 View Analysis</a>
+        <a href="/predict">💰 Predict Costs</a>
+        <a href="/anomaly_detection">🚨 Detect Anomalies</a>
+        <a href="/segmentation">🧑‍⚕️ Segment Patients</a>
+        <a href="/fraud_detection">⚠️ Fraud Detection</a>
+        <a href="/export_fraud_data">📥 Export Data</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-box">
+            <h1>Download Processed Data for Power BI</h1>
+            <p>Click below to download the cleaned and analyzed data:</p>
+
+            <div class="download-buttons">
+                <a href="/export_data"><button>📥 Download Medical Data</button></a>
+                <a href="/export_fraud_data"><button>⚠️ Download Fraud Detection Data</button></a>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2025 Medical Analytics | Powered by AI & Data Science
+        </div>
+    </div>
+
+</body>
+</html>
